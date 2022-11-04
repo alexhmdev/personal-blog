@@ -1,20 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import logo from '../assets/logos/logoRED.svg';
+import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logos/logoRED.svg";
 ---
 
 <Layout title="AlexHM | Welcome">
   <main>
-    <div class="flex flex-row items-center gap-2 mt-3">
-      <div>
-        <img src={logo} alt="logo" class="w-12" />
-      </div>
-      <div>
-        <h1 class="text-2xl font-bold">AlexHM</h1>
-      </div>
-    </div>
     <div class="mt-6">
-      <h1 class="text-5xl font-bold">Welcome to my website!</h1>
+      <h1
+        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-primary"
+      >
+        Welcome to my website!
+      </h1>
       <p class="text-xl mt-10">
         This is my personal website where I publish my toughts and share some
         knwoledge.
