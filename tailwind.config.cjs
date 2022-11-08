@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -9,6 +10,7 @@ module.exports = {
         secondary: '#AC3B40',
         accent: '#CB5950',
         light: '#EFEEEB',
+        'light-primary': '#416dea',
       },
     },
   },
