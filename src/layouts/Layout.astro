@@ -4,6 +4,7 @@ import logoLight from '/logos/logoBLUE.svg';
 import github from '/icons/github-loop.svg';
 import githubLight from '/icons/github-loop-light.svg';
 import Navigation from '../components/Navigation.astro';
+import DarkModeToggle from '../components/DarkModeToggle';
 
 export interface Props {
   title: string;
@@ -33,8 +34,9 @@ const { title } = Astro.props;
         </div>
       </a>
       <span class="flex-1"></span>
+      <DarkModeToggle client:load />
       <a
-        class="inline-flex items-center font-bold cursor-pointer"
+        class="inline-flex items-center font-bold cursor-pointer ml-2"
         href="https://www.github.com/peckas13"
         target="_blank"
       >
