@@ -1,4 +1,4 @@
-# Welcome to my [blog](http://alexhm.dv)
+# Welcome to my [blog](http://alexhm.dev)
 
 This is a blog about my life, my projects and my thoughts.
 
