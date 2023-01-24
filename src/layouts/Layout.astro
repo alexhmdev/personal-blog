@@ -33,35 +33,38 @@ const { title } = Astro.props;
       }
     </script>
   </head>
-  <body class="dark:bg-dark dark:text-light grid justify-center m-3">
-    <div class="inline-flex items-center">
-      <a
-        class="flex items-center gap-2 mt-3 cursor-pointer hover:ease-in-out duration-300 hover:scale-125"
-        href="/"
-      >
-        <div>
-          <img src={logo} alt="logo" class="w-12 hidden dark:flex" />
-          <img src={logoLight} alt="logo" class="w-12 dark:hidden" />
+  <body class="dark:bg-dark dark:text-light">
+    <main class="m-auto my-8 w-3/4 h-screen">
+      <nav class="flex justify-between">
+        <a
+          class="flex items-center gap-2 cursor-pointer hover:ease-in-out duration-300 hover:scale-125"
+          href="/"
+        >
+          <div>
+            <img src={logo} alt="logo" class="w-12 hidden dark:flex" />
+            <img src={logoLight} alt="logo" class="w-12 dark:hidden" />
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">AlexHM</h1>
+          </div>
+        </a>
+        <div class="flex items-center">
+          <DarkModeToggle client:load />
+          <a
+            class="inline-flex items-center font-bold cursor-pointer ml-2"
+            href="https://www.github.com/peckas13"
+            target="_blank"
+          >
+            <img src={githubLight} alt="github" class="w-12 dark:hidden" />
+            <img src={github} alt="github" class="w-12 hidden dark:flex" />
+            <p class="hidden sm:flex">peckas13</p>
+          </a>
         </div>
-        <div>
-          <h1 class="text-2xl font-bold">AlexHM</h1>
-        </div>
-      </a>
-      <span class="flex-1"></span>
-      <DarkModeToggle client:load />
-      <a
-        class="inline-flex items-center font-bold cursor-pointer ml-2"
-        href="https://www.github.com/peckas13"
-        target="_blank"
-      >
-        <img src={githubLight} alt="github" class="w-12 dark:hidden" />
-        <img src={github} alt="github" class="w-12 hidden dark:flex" />
-        <p class="hidden sm:flex">peckas13</p>
-      </a>
-    </div>
-    <div class="flex items-center text-light-primary dark:text-primary">
-      <Navigation />
-    </div>
-    <slot />
+      </nav>
+      <div class="flex items-center text-light-primary dark:text-primary">
+        <Navigation />
+      </div>
+      <slot />
+    </main>
   </body>
 </html>
