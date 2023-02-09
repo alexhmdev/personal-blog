@@ -12,13 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.1",
-    "@astrojs/mdx": "^0.11.4",
-    "@astrojs/react": "^1.2.2",
-    "@astrojs/tailwind": "^2.1.1",
+    "@astrojs/image": "^0.14.1",
+    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/tailwind": "^3.0.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "astro": "^1.5.2",
+    "astro": "^2.0.9",
     "astro-icon": "^0.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
