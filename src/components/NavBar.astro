@@ -1,0 +1,34 @@
+---
+import DarkModeToggle from '../components/DarkModeToggle';
+import logo from '/logos/logoRED.svg';
+import logoLight from '/logos/logoBLUE.svg';
+import github from '/icons/github-loop.svg';
+import githubLight from '/icons/github-loop-light.svg';
+---
+
+<nav class="flex justify-between">
+  <a
+    class="flex items-center gap-2 cursor-pointer transition-transform hover:ease-in-out duration-300 hover:scale-125"
+    href="/"
+  >
+    <div>
+      <img src={logo} alt="logo" class="w-12 hidden dark:flex" />
+      <img src={logoLight} alt="logo" class="w-12 dark:hidden" />
+    </div>
+    <div>
+      <h1 class="text-2xl font-bold">AlexHM</h1>
+    </div>
+  </a>
+  <div class="flex items-center">
+    <DarkModeToggle client:only />
+    <a
+      class="inline-flex items-center font-bold cursor-pointer ml-2 transition-transform hover:ease-in-out duration-300 hover:scale-125"
+      href="https://www.github.com/alexhmdev"
+      target="_blank"
+    >
+      <img src={githubLight} alt="github" class="w-12 dark:hidden" />
+      <img src={github} alt="github" class="w-12 hidden dark:flex" />
+      <p class="hidden sm:flex">Github</p>
+    </a>
+  </div>
+</nav>

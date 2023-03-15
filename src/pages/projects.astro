@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Heading from '../components/Heading.astro';
+import heart from '/icons/heart.svg';
+import { projects } from '../content/projects';
+---
+
+<Layout title="projects">
+  <section class="flex flex-col gap-4">
+    <Heading title="My projects" textGradient size="h2" />
+    <p class="font-bold text-xl">
+      Here are my own projects, all made with love ❤️
+    </p>
+    <div class="grid gap-4 md:grid-cols-3">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</Layout>

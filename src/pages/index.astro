@@ -1,14 +1,11 @@
 ---
+import Heading from '../components/Heading.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome">
-  <section class="mt-6 flex flex-col items-center">
-    <h1
-      class="py-4 text-4xl sm:text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-light-primary dark:from-primary dark:to-pink-900"
-    >
-      Welcome to my website!
-    </h1>
+  <section class="flex flex-col items-center">
+    <Heading title="Welcome to my website!" textGradient />
     <p class="text-xl md:text-2xl mt-10">
       This is my personal website where I publish my toughts and share some
       knwoledge.
