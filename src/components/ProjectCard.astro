@@ -7,28 +7,38 @@ interface Props {
     technologies: string[];
   };
 }
-import github from '/icons/github-loop.svg';
-import githubLight from '/icons/github-loop-light.svg';
-import Heading from './Heading.astro';
+import Heading from "./Heading.astro";
 const { name, repo, description, technologies } = Astro.props.project;
+const theme = localStorage.getItem("theme");
+console.log("working");
 ---
 
 <article
-  class="flex flex-col gap-4 p-4 max-w-sm rounded-lg transition-transform duration-300 hover:ease-in-out hover:-translate-y-4 hover:scale-105 bg-dark dark:bg-light text-light dark:text-black"
+  class="relative max-w-sm rounded-lg bg-gradient-to-tr from-light-primary to-secondary p-1 transition-transform duration-300 hover:-translate-y-4 hover:scale-105 hover:ease-in-out"
 >
-  <Heading title={name} size="h3" />
-  <p class="">{description}</p>
-  <a href={repo}
-    ><img src={githubLight} alt="github" class="w-4 hidden dark:flex" />
-    <img src={github} alt="github" class="w-4 dark:hidden" /></a
+  <div
+    class="flex h-full w-full flex-col gap-4 rounded-lg bg-light p-4 dark:bg-slate-800 dark:text-light"
   >
-  <div class="flex flex-wrap gap-1 justify-center">
-    {
-      technologies.map((tech) => (
-        <div class="bg-light-primary dark:bg-secondary text-light w-fit px-2 py-1 rounded-full">
-          {tech}
-        </div>
-      ))
-    }
+    <Heading title={name} size="h3" />
+    <p class="">{description}</p>
+    <a href={repo} target="_blank">
+      <img
+        src="/icons/github-loop.svg"
+        class="absolute top-4 right-2 hidden w-8 dark:flex"
+      />
+      <img
+        src="/icons/github-loop-light.svg"
+        class="absolute top-4 right-2 w-8 dark:hidden"
+      />
+    </a>
+    <div class="flex flex-wrap justify-center gap-1">
+      {
+        technologies.map((tech) => (
+          <div class="w-fit rounded-full bg-light-primary px-2 py-1 text-light dark:bg-secondary">
+            {tech}
+          </div>
+        ))
+      }
+    </div>
   </div>
 </article>

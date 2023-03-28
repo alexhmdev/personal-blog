@@ -1,25 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
-import '../styles/switch.css';
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/switch.css";
 
 const DarkModeToggle = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') ?? 'dark');
-  const [isChecked, setIsChecked] = useState(theme === 'dark');
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
+  const [isChecked, setIsChecked] = useState(theme === "dark");
   const toggleRef = useRef(null);
   useEffect(() => {
     console.log(theme, isChecked);
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
       setIsChecked(false);
     } else {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
       setIsChecked(true);
     }
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const handleChange = () => {
-    console.log('change');
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    console.log("change");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
