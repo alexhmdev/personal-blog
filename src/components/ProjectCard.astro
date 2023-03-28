@@ -7,10 +7,8 @@ interface Props {
     technologies: string[];
   };
 }
-import Heading from "./Heading.astro";
+import Heading from './Heading.astro';
 const { name, repo, description, technologies } = Astro.props.project;
-const theme = localStorage.getItem("theme");
-console.log("working");
 ---
 
 <article
@@ -21,20 +19,25 @@ console.log("working");
   >
     <Heading title={name} size="h3" />
     <p class="">{description}</p>
-    <a href={repo} target="_blank">
-      <img
-        src="/icons/github-loop.svg"
-        class="absolute top-4 right-2 hidden w-8 dark:flex"
-      />
-      <img
-        src="/icons/github-loop-light.svg"
-        class="absolute top-4 right-2 w-8 dark:hidden"
-      />
-    </a>
+    {
+      repo !== 'private' && (
+        <a href={repo} target="_blank">
+          <img
+            src="/icons/github-loop.svg"
+            class="absolute top-4 right-2 hidden w-8 dark:flex"
+          />
+          <img
+            src="/icons/github-loop-light.svg"
+            class="absolute top-4 right-2 w-8 dark:hidden"
+          />
+        </a>
+      )
+    }
+
     <div class="flex flex-wrap justify-center gap-1">
       {
         technologies.map((tech) => (
-          <div class="w-fit rounded-full bg-light-primary px-2 py-1 text-light dark:bg-secondary">
+          <div class="bg-light-primary text-light dark:bg-secondary w-fit rounded-full px-2 py-1">
             {tech}
           </div>
         ))
