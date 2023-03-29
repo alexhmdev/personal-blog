@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProjectCard from '../components/ProjectCard';
 import Heading from '../components/Heading.astro';
 import heart from '/icons/heart.svg';
 import { projects } from '../content/projects';
@@ -13,7 +13,11 @@ import { projects } from '../content/projects';
       Here are my own projects, all made with love ❤️
     </p>
     <div class="grid gap-4 md:grid-cols-3">
-      {projects.map((project) => <ProjectCard project={project} />)}
+      {
+        projects.map((project) => (
+          <ProjectCard key={project.repo} project={project} client:visible />
+        ))
+      }
     </div>
   </section>
 </Layout>
