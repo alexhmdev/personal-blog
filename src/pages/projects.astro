@@ -1,23 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard';
 import Heading from '../components/Heading.astro';
-import heart from '/icons/heart.svg';
-import { projects } from '../content/projects';
+import ProjectsList from '../components/ProjectsList';
+import { IconHandClick, IconHeart } from '@tabler/icons-react';
 ---
 
 <Layout title="projects">
   <section class="flex flex-col gap-4">
     <Heading title="My projects" textGradient size="h2" />
     <p class="text-xl font-bold">
-      Here are my own projects, all made with love ❤️
+      <p class="flex items-center gap-2">
+        Here are my own projects, all made with love <IconHeart color="red" />
+      </p>
+      <h3 class="m-0 flex items-center gap-2 text-sm">
+        Click a card to see more <IconHandClick />
+      </h3>
     </p>
-    <div class="grid gap-4 md:grid-cols-3">
-      {
-        projects.map((project) => (
-          <ProjectCard key={project.repo} project={project} client:visible />
-        ))
-      }
-    </div>
+    <ProjectsList client:visible />
   </section>
 </Layout>

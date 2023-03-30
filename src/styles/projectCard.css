@@ -1,9 +1,13 @@
 .card {
-  transition: transform 0.6s;
+  transition: transform 0.6s, scale 0.6s;
   transform-style: preserve-3d;
 }
 .card.flip {
   transform: rotateY(180deg);
+  z-index: 10;
+  position: static;
+  width: 100%;
+  scale: 2;
 }
 
 .front,
@@ -13,4 +17,13 @@
 
 .back {
   transform: rotateY(180deg);
+}
+
+@media (max-width: 480px) {
+  /* Your CSS styles for smartphones here */
+  .card.flip {
+    transform: rotateY(180deg);
+    position: static;
+    scale: 1.15;
+  }
 }
