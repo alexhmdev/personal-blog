@@ -1,16 +1,23 @@
 ---
-import Heading from "../components/Heading.astro";
-import Layout from "../layouts/Layout.astro";
+import Heading from '../components/Heading.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome">
-  <section class="flex flex-col items-center">
+  <section class="flex flex-col items-center lg:text-ellipsis">
     <Heading title="Welcome to my website!" textGradient />
-    <p class="mt-10 text-xl md:text-2xl">
-      This is my personal website where I publish my toughts and share some
-      knwoledge.
-      <br />
-      Feel free to navigate and explore it!
-    </p>
+    <div class="flex flex-col items-center gap-4 md:flex-row">
+      <p class="mt-10 text-xl md:text-2xl">
+        This is my personal website where I publish my toughts and share some
+        knwoledge.
+        <br />
+        Feel free to navigate and explore it!
+      </p>
+      <img
+        src="/images/me/profile.jpg"
+        alt="me"
+        class="max-w-xs rounded-full bg-gradient-to-bl from-primary to-light-primary p-1 sm:max-w-sm"
+      />
+    </div>
   </section>
 </Layout>

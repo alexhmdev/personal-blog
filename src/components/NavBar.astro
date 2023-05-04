@@ -1,9 +1,9 @@
 ---
-import DarkModeToggle from "../components/DarkModeToggle";
-import logo from "/logos/logoRED.svg";
-import logoLight from "/logos/logoBLUE.svg";
-import github from "/icons/github-loop.svg";
-import githubLight from "/icons/github-loop-light.svg";
+import DarkModeToggle from '../components/DarkModeToggle';
+import logo from '/logos/logoRED.svg';
+import logoLight from '/logos/logoBLUE.svg';
+import github from '/icons/github-loop.svg';
+import githubLight from '/icons/github-loop-light.svg';
 ---
 
 <nav class="flex justify-between">
@@ -20,7 +20,7 @@ import githubLight from "/icons/github-loop-light.svg";
     </div>
   </a>
   <div class="flex items-center">
-    <DarkModeToggle client:only />
+    <DarkModeToggle client:only="react" />
     <a
       class="ml-2 inline-flex cursor-pointer items-center font-bold transition-transform duration-300 hover:scale-125 hover:ease-in-out"
       href="https://www.github.com/alexhmdev"

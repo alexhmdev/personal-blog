@@ -20,7 +20,7 @@ export const projects: Project[] = [
     id: 1,
     name: 'DritsJS',
     repo: 'https://github.com/alexhmdev/dritsjs',
-    prod: '',
+    prod: 'https://alexhmdev.github.io/dritsjs/',
     image: '/images/projects/dritsjs.png',
     description: 'My own JavaScript sandbox! on windows and web',
     technologies: ['TailwindCSS', 'Electron', 'JavaScript', 'Vite'],
