@@ -5,7 +5,7 @@ import WinBox from 'react-winbox';
 import windowIcon from '/icons/window-icon.svg';
 import { breakpoints } from '../utils/breakpoints';
 
-function ProjectWindow({ project, onClose }) {
+function ProjectWindow({ project, onClose, windowRef }) {
   const { name, prod } = project;
   const width = window.innerWidth > breakpoints.md ? 900 : 300;
   const height = window.innerWidth > breakpoints.md ? 500 : 200;
@@ -27,6 +27,7 @@ function ProjectWindow({ project, onClose }) {
           : 'linear-gradient(to right, #5275e8, #7d8bf7)'
       }`}
       icon={windowIcon}
+      ref={windowRef}
     ></WinBox>
   );
 }
