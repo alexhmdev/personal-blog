@@ -16,6 +16,7 @@ const ProjectsList = () => {
     ));
 
   const openPreview = (project) => {
+    if (windows.includes(project)) return;
     setWindows([...windows, project]);
   };
 
@@ -25,7 +26,7 @@ const ProjectsList = () => {
   return (
     <>
       {openWindows()}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="flex flex-wrap gap-8">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}

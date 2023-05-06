@@ -9,13 +9,6 @@ interface Project {
 }
 
 export const projects: Project[] = [
-  /* {
-    id: 0,
-    name: '',
-    repo: '',
-    description: '',
-    technologies: [''],
-  }, */
   {
     id: 1,
     name: 'DritsJS',
@@ -67,5 +60,14 @@ export const projects: Project[] = [
       'Express',
       'MongoDB',
     ],
+  },
+  {
+    id: 6,
+    name: 'Astro portfolio template',
+    repo: 'https://github.com/alexhmdev/astro-portfolio',
+    prod: 'https://alexhm-astro-portfolio.vercel.app/',
+    description: 'A portfolio template made with Astro',
+    image: '/images/projects/astro-portfolio.png',
+    technologies: ['Astro', 'TailwindCSS', 'DaisyUI', 'TypeScript'],
   },
 ];

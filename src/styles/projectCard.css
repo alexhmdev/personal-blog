@@ -5,8 +5,6 @@
 .card.flip {
   transform: rotateY(180deg);
   z-index: 10;
-  position: static;
-  width: 100%;
   scale: 2;
 }
 
@@ -23,7 +21,6 @@
   /* Your CSS styles for smartphones here */
   .card.flip {
     transform: rotateY(180deg);
-    position: static;
     scale: 1.15;
   }
 }

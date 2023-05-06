@@ -10,7 +10,6 @@ function ProjectWindow({ project, onClose }) {
   const width = window.innerWidth > breakpoints.md ? 900 : 300;
   const height = window.innerWidth > breakpoints.md ? 500 : 200;
 
-  // check if html tag is dark mode
   const isDarkMode = document.documentElement.classList.contains('dark');
 
   return (
