@@ -24,7 +24,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/alexhmdev/startupmate',
     prod: 'https://startupmate.vercel.app/',
     image: '/images/projects/startupmate.png',
-    description: 'This is a short description about the project',
+    description: 'A startup idea generator with Cohere ai',
     technologies: ['TailwindCSS', 'Remix', 'Cohere', 'TypeScript'],
   },
   {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/alexhmdev/spotify-loop-mood',
     prod: 'https://spotify-loop-mood-peckas13.vercel.app/',
     image: '/images/projects/spotify-loop.png',
-    description: 'This is a short description about the project',
+    description: 'This is my personal Spotify top 50 songs and mood',
     technologies: ['Nextjs', 'TailwindCSS', 'JavaScript'],
   },
   {
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     name: 'Astro portfolio template',
     repo: 'https://github.com/alexhmdev/astro-portfolio',
     prod: 'https://alexhm-astro-portfolio.vercel.app/',
-    description: 'A portfolio template made with Astro',
+    description: 'A portfolio template made with Astro for the community',
     image: '/images/projects/astro-portfolio.png',
     technologies: ['Astro', 'TailwindCSS', 'DaisyUI', 'TypeScript'],
   },
