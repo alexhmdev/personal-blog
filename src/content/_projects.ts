@@ -11,12 +11,12 @@ interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    name: 'DritsJS',
-    repo: 'https://github.com/alexhmdev/dritsjs',
-    prod: 'https://alexhmdev.github.io/dritsjs/',
-    image: '/images/projects/dritsjs.png',
-    description: 'My own JavaScript sandbox! on windows and web',
-    technologies: ['TailwindCSS', 'Electron', 'JavaScript', 'Vite'],
+    name: 'DritsJS - Playground',
+    repo: 'https://github.com/alexhmdev/js-playground',
+    prod: 'https://dritsjs-playground.vercel.app/',
+    image: '/images/projects/js-playground.png',
+    description: 'My own JavaScript playground! made with ❤️ for the community',
+    technologies: ['React', 'TailwindCSS', 'Vite'],
   },
   {
     id: 2,
@@ -24,7 +24,12 @@ export const projects: Project[] = [
     repo: 'https://github.com/alexhmdev/startupmate',
     prod: 'https://startupmate.vercel.app/',
     image: '/images/projects/startupmate.png',
+<<<<<<< HEAD
     description: 'A startup idea generator with Cohere ai',
+=======
+    description:
+      'A startup generator using AI powered by Cohere for a hackathon',
+>>>>>>> 08c0bf7 (Added images and descriptions about me)
     technologies: ['TailwindCSS', 'Remix', 'Cohere', 'TypeScript'],
   },
   {

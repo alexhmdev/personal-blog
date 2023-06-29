@@ -13,7 +13,6 @@ const ProjectCard = ({ project }) => {
   };
 
   const handleOpenPreview = () => {
-    console.log(winBoxRef.current);
     if (winBoxRef.current) {
       return winBoxRef.current.isMin() ? winBoxRef.current.restore() : null;
     }
