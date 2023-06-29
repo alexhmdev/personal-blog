@@ -24,12 +24,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/alexhmdev/startupmate',
     prod: 'https://startupmate.vercel.app/',
     image: '/images/projects/startupmate.png',
-<<<<<<< HEAD
     description: 'A startup idea generator with Cohere ai',
-=======
-    description:
-      'A startup generator using AI powered by Cohere for a hackathon',
->>>>>>> 08c0bf7 (Added images and descriptions about me)
     technologies: ['TailwindCSS', 'Remix', 'Cohere', 'TypeScript'],
   },
   {
