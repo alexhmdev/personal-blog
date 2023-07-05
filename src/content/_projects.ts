@@ -15,7 +15,8 @@ export const projects: Project[] = [
     repo: 'https://github.com/alexhmdev/js-playground',
     prod: 'https://dritsjs-playground.vercel.app/',
     image: '/images/projects/js-playground.png',
-    description: 'My own JavaScript playground! made with ❤️ for the community',
+    description:
+      'My own JavaScript playground! made with ❤️ for the community!',
     technologies: ['React', 'TailwindCSS', 'Vite'],
   },
   {
