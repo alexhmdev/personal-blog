@@ -6,7 +6,6 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="About">
   <section class="flex flex-col">
     <Heading title="About me" textGradient size="h2" />
-    (Page under contruction 🚧) <br />
     <p class="text-xl">
       I'm a web developer passionate about technology and programming. I'm
       currently working as a frontend developer at <a
@@ -14,42 +13,57 @@ import Layout from '../layouts/Layout.astro';
         target="_blank"
         class="text-blue-400">Softtek</a
       >
-      <p>
-        I fell in love with this new framework that help us to do things faster
-        and with a great performance, I use it a lot to make static web pages
-        like my own site and a portfolio, also a landing page and more! 🚀
-      </p>
+      <ul class="grid grid-cols-1 text-justify md:grid-cols-3 md:gap-10">
+        <li>
+          <img
+            src="/logos/astro-logo-light.png"
+            alt="astro"
+            class="m-auto hidden h-32 w-32 object-contain dark:block"
+          />
+          <img
+            src="/logos/astro-logo-dark.png"
+            alt="astro"
+            class="m-auto block h-32 w-32 object-contain dark:hidden"
+          />
+          <p>
+            I fell in love with this new framework that help us to do things
+            faster and with a great performance, I use it a lot to make static
+            web pages like my own site and a portfolio, also a landing page and
+            more! 🚀
+          </p>
+        </li>
+        <li>
+          <a href="https://swift.org" target="_blank">
+            <img
+              src="/logos/swift-dark.svg"
+              alt="swift"
+              class="m-auto hidden h-32 w-32 object-contain dark:block"
+            />
+            <img
+              src="/logos/swift-light.svg"
+              alt="swift"
+              class="m-auto block h-32 w-32 object-contain dark:hidden"
+            />
+          </a>
+          <p>
+            To develop my apps for iOS natively and to complement my knowledge
+            about mobile developing
+          </p>
+        </li>
+        <li>
+          <a href="https://reactnative.dev">
+            <img
+              src="/logos/react-native.svg"
+              alt="React native"
+              class="m-auto h-32 w-32 object-contain"
+            /></a
+          >
+          <p>
+            To create awesome apps for Android and iOS using JavaScript or
+            TypeScript!
+          </p>
+        </li>
+      </ul>
     </p>
-    <li>
-      <a href="https://swift.org" target="_blank">
-        <img
-          src="/logos/swift-dark.svg"
-          alt="swift"
-          class="m-auto hidden h-32 w-32 object-contain dark:block"
-        />
-        <img
-          src="/logos/swift-light.svg"
-          alt="swift"
-          class="m-auto block h-32 w-32 object-contain dark:hidden"
-        />
-      </a>
-      <p>
-        To develop my apps for iOS natively and to complement my knowledge about
-        mobile developing
-      </p>
-    </li>
-    <li>
-      <a href="https://reactnative.dev">
-        <img
-          src="/logos/react-native.svg"
-          alt="React native"
-          class="m-auto h-32 w-32 object-contain"
-        /></a
-      >
-      <p>
-        To create awesome apps for Android and iOS using JavaScript or
-        TypeScript!
-      </p>
-    </li>
   </section>
 </Layout>
