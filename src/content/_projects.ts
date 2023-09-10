@@ -11,7 +11,7 @@ interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    name: 'DritsJS - Playground',
+    name: 'JS playground',
     repo: 'https://github.com/alexhmdev/js-playground',
     prod: 'https://dritsjs-playground.vercel.app/',
     image: '/images/projects/js-playground.png',
@@ -70,5 +70,15 @@ export const projects: Project[] = [
     description: 'A portfolio template made with Astro for the community',
     image: '/images/projects/astro-portfolio.png',
     technologies: ['Astro', 'TailwindCSS', 'DaisyUI', 'TypeScript'],
+  },
+  {
+    id: 7,
+    name: 'QuackBoard',
+    repo: 'https://github.com/alexhmdev/quackboard',
+    prod: 'https://duck-quackboard.vercel.app/',
+    description:
+      'A quackboard made with React and Zustand for the Kurojam 2023',
+    image: '/images/projects/quackBoard.png',
+    technologies: ['React', 'TailwindCSS', 'JavaScript', 'Zustand'],
   },
 ];
