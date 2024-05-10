@@ -16,11 +16,33 @@ const ProjectCard = ({ project }) => {
     if (winBoxRef.current) {
       return winBoxRef.current.isMin() ? winBoxRef.current.restore() : null;
     }
+    // send a custom event to GA4 to track the project preview
+    const event = new CustomEvent('sendcustomevent', {
+      detail: {
+        event: 'project_preview',
+        data: {
+          selected_project: name,
+          open_preview: true,
+        },
+      },
+    });
+    window.dispatchEvent(event);
     setShowWindow(true);
   };
 
   const handleClosePreview = () => {
     setShowWindow(false);
+    // send a custom event to GA4 to track the project preview
+    const event = new CustomEvent('sendcustomevent', {
+      detail: {
+        event: 'project_preview',
+        data: {
+          selected_project: name,
+          open_preview: false,
+        },
+      },
+    });
+    window.dispatchEvent(event);
   };
 
   return (
