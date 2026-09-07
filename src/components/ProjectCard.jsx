@@ -55,47 +55,66 @@ const ProjectCard = ({ project }) => {
         />
       ) : null}
       <article
-        className="card relative h-64 w-80 cursor-pointer rounded-lg bg-gradient-to-tr   from-light-primary to-indigo-400 p-1 dark:from-light-primary dark:to-secondary "
+        className="card relative h-72 sm:h-80 w-full max-w-[20rem] sm:w-80 cursor-pointer rounded-xl bg-gradient-to-tr from-light-primary to-indigo-400 p-1 dark:from-light-primary dark:to-secondary shadow-md hover:shadow-xl transition-shadow duration-300"
         ref={cardRef}
         onClick={handleFlip}
       >
-        <div className="front absolute top-2 left-2 flex  h-full w-full flex-col gap-4 rounded-lg bg-light p-4 drop-shadow-lg dark:bg-slate-800 dark:text-light">
-          <h2 className=" pr-4 text-left text-3xl">{name}</h2>
-          <p className="">{description}</p>
-          {repo !== 'private' && (
-            <a href={repo} target="_blank">
-              <img
-                src="/icons/github-loop.svg"
-                className="absolute top-4 right-2 hidden w-8 dark:flex"
-              />
-              <img
-                src="/icons/github-loop-light.svg"
-                className="absolute top-4 right-2 w-8 dark:hidden"
-              />
-            </a>
-          )}
+        <div className="front absolute inset-1 flex flex-col rounded-lg bg-light p-4 drop-shadow-md dark:bg-slate-800 dark:text-light">
+          <div className="flex items-start justify-between gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-left leading-snug">
+              {name}
+            </h2>
+            {repo !== 'private' && (
+              <a
+                href={repo}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="shrink-0 rounded-md p-1 -mr-1 -mt-1 hover:opacity-80 transition-opacity"
+                title="View GitHub Repository"
+              >
+                <img
+                  src="/icons/github-loop.svg"
+                  alt="GitHub"
+                  className="hidden w-6 h-6 sm:w-7 sm:h-7 dark:block"
+                />
+                <img
+                  src="/icons/github-loop-light.svg"
+                  alt="GitHub"
+                  className="block w-6 h-6 sm:w-7 sm:h-7 dark:hidden"
+                />
+              </a>
+            )}
+          </div>
 
-          <div className="flex flex-wrap justify-center gap-1">
+          <p className="mt-2 text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed overflow-hidden">
+            {description}
+          </p>
+
+          <div className="mt-auto pt-3 flex flex-wrap items-center justify-start sm:justify-center gap-1.5">
             {technologies.map((tech, index) => (
-              <div
+              <span
                 key={index}
-                className="w-fit rounded-full bg-light-primary px-2 py-1 text-light dark:bg-secondary"
+                className="inline-flex items-center rounded-full bg-light-primary/90 px-2.5 py-0.5 text-[11px] sm:text-xs font-medium text-light dark:bg-secondary/90 shadow-sm"
               >
                 {tech}
-              </div>
+              </span>
             ))}
           </div>
         </div>
-        <div className="back absolute top-2 left-2 flex h-full w-full flex-col rounded-lg bg-light p-1 drop-shadow-xl dark:bg-slate-800 dark:text-light">
+        <div className="back absolute inset-1 flex flex-col rounded-lg bg-light p-1 drop-shadow-xl dark:bg-slate-800 dark:text-light overflow-hidden">
           <img
             src={image}
             alt={name}
-            className="h-full w-full rounded-lg object-cover"
+            className="h-full w-full rounded-md object-cover"
           />
           {repo !== 'private' ? (
             <button
-              onClick={handleOpenPreview}
-              className="hover: absolute right-2 bottom-2 flex content-center rounded-full bg-accent p-2 text-light drop-shadow-lg transition-[scale] duration-300 hover:scale-110 dark:bg-light-primary"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpenPreview();
+              }}
+              className="absolute right-2 bottom-2 flex content-center rounded-full bg-accent p-2 text-light drop-shadow-lg transition-[scale] duration-300 hover:scale-110 dark:bg-light-primary"
             >
               <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70"></div>
               <svg

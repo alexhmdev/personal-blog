@@ -10,7 +10,7 @@ const sizes = {
   h3: "text-2xl md:text-3xl",
 };
 
-const { title, textGradient, size } = Astro.props;
+const { title, textGradient, size = "h1" } = Astro.props;
 ---
 
 <h1

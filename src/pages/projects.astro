@@ -8,14 +8,14 @@ import { IconHandClick, IconHeart } from '@tabler/icons-react';
 <Layout title="projects">
   <section class="flex flex-col gap-4">
     <Heading title="My projects" textGradient size="h2" />
-    <p class="text-xl font-bold">
+    <div class="text-xl font-bold">
       <p class="flex items-center gap-2">
         Here are my own projects, all made with love <IconHeart color="red" />
       </p>
       <h3 class="m-0 flex items-center gap-2 text-sm">
         Click a card to see more <IconHandClick />
       </h3>
-    </p>
+    </div>
     <ProjectsList client:only="react" />
   </section>
 </Layout>

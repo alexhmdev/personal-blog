@@ -81,4 +81,13 @@ export const projects: Project[] = [
     image: '/images/projects/quackBoard.png',
     technologies: ['React', 'TailwindCSS', 'JavaScript', 'Zustand'],
   },
+  {
+    id: 8,
+    name: 'Amazon Availability Bot',
+    repo: 'https://github.com/alexhmdev/amazon-bot',
+    image: '/images/projects/amazon-bot.png',
+    description:
+      'An automated product availability tracker and scraper for Amazon with instant WhatsApp notifications',
+    technologies: ['NodeJs', 'Cheerio', 'Axios', 'WhatsApp Web', 'JavaScript'],
+  },
 ];

@@ -1,23 +1,73 @@
 ---
 import Heading from '../components/Heading.astro';
 import Layout from '../layouts/Layout.astro';
+import { IconFileText, IconCode } from '@tabler/icons-react';
 ---
 
 <Layout title="Welcome">
-  <section class="flex flex-col items-center lg:text-ellipsis">
-    <Heading title="Welcome to my website!" textGradient />
-    <div class="flex flex-col items-center gap-4 md:flex-row">
-      <p class="mt-10 text-xl md:text-2xl">
-        This is my personal website where I publish my toughts and share my
-        projects.
-        <br />
-        Feel free to navigate and explore it!
-      </p>
-      <img
-        src="/images/me/profile.jpg"
-        alt="me"
-        class="max-w-xs rounded-full bg-gradient-to-bl from-primary to-light-primary p-1 sm:max-w-sm"
-      />
+  <section class="flex flex-col items-center py-6">
+    <Heading title="Alejandro Herrera Merlo" textGradient />
+    <p class="mt-2 text-center text-xl font-semibold text-light-primary dark:text-accent md:text-2xl">
+      Senior Software Engineer &bull; AI Agent Systems &bull; Full Stack Developer
+    </p>
+
+    <div class="mt-8 flex flex-col items-center gap-8 md:flex-row md:items-start">
+      <div class="flex-1 space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+        <p>
+          Welcome to my digital garden! I'm a Senior Software Engineer with <strong>6+ years of experience</strong> building production-grade React/TypeScript applications and enterprise AI agent systems.
+        </p>
+        <p>
+          Currently, I design and deploy LLM-driven workflows, multi-agent architectures, and high-performance vector search pipelines (ChromaDB). Previously at Softtek, I led the GPT-4 migration of AI chatbots serving thousands of university students.
+        </p>
+        <p>
+          This is my personal space where I publish my thoughts, document engineering lessons, and showcase side projects.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-4">
+          <a
+            href="/projects"
+            class="inline-flex items-center gap-2 rounded-lg bg-light-primary px-4 py-2 font-semibold text-light shadow-md transition-transform duration-300 hover:scale-105 dark:bg-primary"
+          >
+            <IconCode size={20} />
+            Explore Projects
+          </a>
+          <a
+            href="/Alejandro_Herrera_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-lg border border-light-primary px-4 py-2 font-semibold text-light-primary transition-transform duration-300 hover:scale-105 hover:bg-light-primary hover:text-light dark:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-dark"
+          >
+            <IconFileText size={20} />
+            View Resume (PDF)
+          </a>
+          <a
+            href="/about"
+            class="inline-flex items-center gap-2 rounded-lg px-4 py-2 font-semibold text-slate-600 transition-colors hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            About Me &rarr;
+          </a>
+        </div>
+
+        <!-- Tech Pills -->
+        <div class="flex flex-wrap gap-2 pt-4 text-xs font-semibold">
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">AI Agents & LLMs</span>
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">React & TypeScript</span>
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">ChromaDB</span>
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">Astro 7</span>
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">Vitest / TDD</span>
+          <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-800 dark:bg-slate-800 dark:text-slate-200">Node.js</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img
+          src="/images/me/profile.jpg"
+          alt="Alejandro Herrera Merlo"
+          class="w-48 max-w-xs rounded-full bg-gradient-to-bl from-primary to-light-primary p-1.5 shadow-xl sm:w-64"
+        />
+        <span class="mt-3 text-xs text-slate-500 dark:text-slate-400">Aguascalientes, México</span>
+      </div>
     </div>
   </section>
 </Layout>

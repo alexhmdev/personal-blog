@@ -1,74 +1,163 @@
 ---
 import Heading from '../components/Heading.astro';
 import Layout from '../layouts/Layout.astro';
+import {
+  IconFileText,
+  IconBriefcase,
+  IconSchool,
+  IconCpu,
+  IconMapPin,
+  IconBrandLinkedin,
+  IconBrandGithub,
+} from '@tabler/icons-react';
 ---
 
 <Layout title="About">
-  <section class="flex flex-col">
-    <Heading title="About me" textGradient size="h2" />
-    <p class="text-xl">
-      I'm a web developer passionate about technology and programming. I'm
-      currently working as a frontend developer at <a
-        href="https://softtek.com"
-        target="_blank"
-        class="text-blue-400">Softtek</a
-      >
-      <Heading
-        title="Currently learning and exploring"
-        textGradient
-        size="h3"
-      />
-      <ul class="grid grid-cols-1 text-justify md:grid-cols-3 md:gap-10">
-        <li>
-          <img
-            src="/logos/astro-logo-light.png"
-            alt="astro"
-            class="m-auto hidden h-32 w-32 object-contain dark:block"
-          />
-          <img
-            src="/logos/astro-logo-dark.png"
-            alt="astro"
-            class="m-auto block h-32 w-32 object-contain dark:hidden"
-          />
-          <p>
-            I fell in love with this new framework that help us to do things
-            faster and with a great performance, I use it a lot to make static
-            web pages like my own site and a portfolio, also a landing page and
-            more! 🚀
+  <section class="flex flex-col gap-10 py-6">
+    <!-- Header Summary -->
+    <div class="flex flex-col gap-4">
+      <Heading title="About Me" textGradient size="h2" />
+      <p class="text-xl leading-relaxed text-slate-700 dark:text-slate-200">
+        I'm <strong>Alejandro Herrera Merlo</strong>, a Senior Software Engineer based in Aguascalientes, México. With over <strong>6 years of experience</strong> building production React/TypeScript systems, my recent focus is architecting and deploying <strong>LLM workflows, multi-agent autonomous systems, and vector search pipelines</strong> (ChromaDB).
+      </p>
+
+      <!-- Contact & Download Actions -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a
+          href="/Alejandro_Herrera_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-light-primary px-5 py-2.5 font-semibold text-light shadow-md transition-transform duration-300 hover:scale-105 dark:bg-primary"
+        >
+          <IconFileText size={20} />
+          Download Full Resume (PDF)
+        </a>
+        <a
+          href="https://linkedin.com/in/alejandro-herrera-merlo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+        >
+          <IconBrandLinkedin size={20} />
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/alexhmdev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+        >
+          <IconBrandGithub size={20} />
+          GitHub
+        </a>
+        <span class="inline-flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
+          <IconMapPin size={18} />
+          Aguascalientes, México
+        </span>
+      </div>
+    </div>
+
+    <!-- Technical Expertise Categories -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <IconCpu className="text-light-primary dark:text-accent" size={28} />
+        <Heading title="Technical Competencies" textGradient size="h3" />
+      </div>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+          <h4 class="mb-2 text-lg font-bold text-light-primary dark:text-accent">AI & Agent Systems</h4>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            LLM Workflows, Multi-Agent Architectures, Vector Databases (ChromaDB), Vector Search Pipelines, Azure OpenAI API, Prompt Engineering, Autonomous Bug-Triage Agents.
           </p>
-        </li>
-        <li>
-          <a href="https://swift.org" target="_blank">
-            <img
-              src="/logos/swift-dark.svg"
-              alt="swift"
-              class="m-auto hidden h-32 w-32 object-contain dark:block"
-            />
-            <img
-              src="/logos/swift-light.svg"
-              alt="swift"
-              class="m-auto block h-32 w-32 object-contain dark:hidden"
-            />
-          </a>
-          <p>
-            To develop my apps for iOS natively and to complement my knowledge
-            about mobile developing
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+          <h4 class="mb-2 text-lg font-bold text-light-primary dark:text-accent">Frontend & Web</h4>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            React 19, TypeScript, JavaScript, Astro 7, Next.js, Vite, Tailwind CSS, Redux, Island Architecture, Storybook, Vitest, Jest, Test-Driven Development (TDD).
           </p>
-        </li>
-        <li>
-          <a href="https://reactnative.dev">
-            <img
-              src="/logos/react-native.svg"
-              alt="React native"
-              class="m-auto h-32 w-32 object-contain"
-            /></a
-          >
-          <p>
-            To create awesome apps for Android and iOS using JavaScript or
-            TypeScript!
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+          <h4 class="mb-2 text-lg font-bold text-light-primary dark:text-accent">Backend, Mobile & Data</h4>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Node.js, Express, MongoDB, SQL / Relational Databases, React Native, Swift (iOS), Ionic, REST APIs, Git & GitLab CI/CD workflows.
           </p>
-        </li>
-      </ul>
-    </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Experience Timeline -->
+    <div class="space-y-6">
+      <div class="flex items-center gap-2">
+        <IconBriefcase className="text-light-primary dark:text-accent" size={28} />
+        <Heading title="Experience Highlights" textGradient size="h3" />
+      </div>
+
+      <div class="space-y-6 border-l-2 border-slate-200 pl-4 dark:border-slate-800 md:pl-6">
+        <!-- Platica -->
+        <div class="relative group">
+          <div class="absolute -left-[23px] md:-left-[31px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-light-primary bg-light dark:border-accent dark:bg-dark"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+            <h4 class="text-xl font-bold text-slate-900 dark:text-slate-100">Senior Full Stack Developer · <span class="text-light-primary dark:text-accent">Platica</span></h4>
+            <span class="text-sm text-slate-500 dark:text-slate-400">Nov 2025 – Aug 2026</span>
+          </div>
+          <p class="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">Aguascalientes, México · B2B AI Platform</p>
+          <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-600 dark:text-slate-300">
+            <li>Managed and optimized the core Platica platform, ensuring high availability and seamless integration of AI-driven workflows.</li>
+            <li>Designed and deployed an end-to-end bug-triage agent connecting Platica AI, Notion, Cursor, and GitHub, reducing manual issue tracking overhead.</li>
+            <li>Architected a high-scale vector search pipeline using ChromaDB to index and query historical agent-client interactions.</li>
+            <li>Built a full client API test suite with Vitest, establishing the engineering team's first systematic QA baseline.</li>
+          </ul>
+        </div>
+
+        <!-- Softtek -->
+        <div class="relative group">
+          <div class="absolute -left-[23px] md:-left-[31px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-400 bg-light dark:border-slate-600 dark:bg-dark"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+            <h4 class="text-xl font-bold text-slate-900 dark:text-slate-100">Frontend Developer (AI Team) · <span class="text-light-primary dark:text-accent">Softtek</span></h4>
+            <span class="text-sm text-slate-500 dark:text-slate-400">Feb 2023 – Jan 2026</span>
+          </div>
+          <p class="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">Aguascalientes, México</p>
+          <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-600 dark:text-slate-300">
+            <li>Led migration of legacy NLP chatbot to GPT-4 via Azure OpenAI API, improving answer quality for thousands of active university students.</li>
+            <li>Engineered bot-assisted applications and embeddable chatbot widgets in React with minimize/fullscreen modes.</li>
+            <li>Implemented Test-Driven Development (TDD) using Jest & React Testing Library, and introduced Storybook component libraries.</li>
+          </ul>
+        </div>
+
+        <!-- UTMA Professor -->
+        <div class="relative group">
+          <div class="absolute -left-[23px] md:-left-[31px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-400 bg-light dark:border-slate-600 dark:bg-dark"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+            <h4 class="text-xl font-bold text-slate-900 dark:text-slate-100">Professor, Web Development & App Security · <span class="text-light-primary dark:text-accent">UTMA</span></h4>
+            <span class="text-sm text-slate-500 dark:text-slate-400">Aug 2023 – Dec 2023</span>
+          </div>
+          <p class="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">Universidad Tecnológica Metropolitana de Aguascalientes</p>
+          <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-600 dark:text-slate-300">
+            <li>Taught modern web architectures and application security using React, Astro, and Angular.</li>
+            <li>Introduced island architecture, module pattern, observer, and agile SCRUM through hands-on product builds.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <IconSchool className="text-light-primary dark:text-accent" size={28} />
+        <Heading title="Education" textGradient size="h3" />
+      </div>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+          <h4 class="font-bold text-slate-900 dark:text-slate-100">Master's Degree, Game Design & Development</h4>
+          <p class="text-sm font-medium text-light-primary dark:text-accent">Universidad Internacional de La Rioja (UNIR)</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Jan 2024 – May 2025</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+          <h4 class="font-bold text-slate-900 dark:text-slate-100">Engineer & Associate in Software Development</h4>
+          <p class="text-sm font-medium text-light-primary dark:text-accent">Universidad Tecnológica de Aguascalientes</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">2018 – 2022 · Multiplatform Software Engineering & Management</p>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>

@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { IconArrowLeft, IconCalendar, IconTag } from '@tabler/icons-react';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <article class="mx-auto max-w-3xl py-8">
+    <!-- Back to blog navigation -->
+    <a
+      href="/blog"
+      class="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-light-primary transition-transform hover:-translate-x-1 dark:text-accent"
+    >
+      <IconArrowLeft size={18} />
+      Back to all articles
+    </a>
+
+    <!-- Header info -->
+    <header class="mb-8 space-y-4 border-b border-slate-200 pb-6 dark:border-slate-800">
+      <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <span class="inline-flex items-center gap-1.5">
+          <IconCalendar size={16} />
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </span>
+        <span>&bull;</span>
+        <span>By Alejandro Herrera Merlo</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl md:text-5xl">
+        {post.data.title}
+      </h1>
+
+      <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        {post.data.description}
+      </p>
+
+      {post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 pt-2">
+          {post.data.tags.map(tag => (
+            <span class="inline-flex items-center gap-1 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+              <IconTag size={12} />
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <!-- Post Body Content -->
+    <div class="blog-prose space-y-6 text-slate-800 dark:text-slate-200 leading-relaxed">
+      <Content />
+    </div>
+
+    <!-- Article Footer -->
+    <footer class="mt-12 border-t border-slate-200 pt-6 dark:border-slate-800">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-1.5 font-semibold text-light-primary hover:underline dark:text-accent"
+        >
+          <IconArrowLeft size={18} />
+          Back to articles
+        </a>
+        <a
+          href="https://github.com/alexhmdev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+        >
+          Discuss on GitHub &rarr;
+        </a>
+      </div>
+    </footer>
+  </article>
+</Layout>
+
+<style is:global>
+  .blog-prose h1 {
+    display: none; /* Already rendered in the article header */
+  }
+  .blog-prose h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    padding-bottom: 0.5rem;
+  }
+  .blog-prose h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .blog-prose p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .blog-prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .blog-prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .blog-prose li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+  .blog-prose pre {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .blog-prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+    padding: 0.15em 0.35em;
+    border-radius: 0.25rem;
+    background-color: rgba(148, 163, 184, 0.15);
+  }
+  .blog-prose pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  .blog-prose hr {
+    margin: 2rem 0;
+    border-color: rgba(148, 163, 184, 0.2);
+  }
+</style>

@@ -2,7 +2,6 @@ import 'winbox/dist/css/winbox.min.css'; // required
 import 'winbox/dist/css/themes/modern.min.css'; // optional
 import 'winbox/dist/css/themes/white.min.css'; // optional
 import WinBox from 'react-winbox';
-import windowIcon from '/icons/window-icon.svg';
 import { breakpoints } from '../utils/breakpoints';
 
 function ProjectWindow({ project, onClose, windowRef }) {
@@ -26,7 +25,7 @@ function ProjectWindow({ project, onClose, windowRef }) {
           ? 'linear-gradient(to right, #4f63ce, #9e445b)'
           : 'linear-gradient(to right, #5275e8, #7d8bf7)'
       }`}
-      icon={windowIcon}
+      icon="/icons/window-icon.svg"
       ref={windowRef}
     ></WinBox>
   );

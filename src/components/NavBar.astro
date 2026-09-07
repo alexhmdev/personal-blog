@@ -1,34 +1,52 @@
 ---
 import DarkModeToggle from '../components/DarkModeToggle';
-import logo from '/logos/logoRED.svg';
-import logoLight from '/logos/logoBLUE.svg';
-import github from '/icons/github-loop.svg';
-import githubLight from '/icons/github-loop-light.svg';
+import { IconBrandLinkedin, IconFileText } from '@tabler/icons-react';
 ---
 
-<nav class="flex justify-between">
+<nav class="flex items-center justify-between">
   <a
-    class="flex cursor-pointer items-center gap-2 transition-transform duration-300 hover:scale-125 hover:ease-in-out"
+    class="flex cursor-pointer items-center gap-2 transition-transform duration-300 hover:scale-110 hover:ease-in-out"
     href="/"
   >
     <div>
-      <img src={logo} alt="logo" class="hidden w-12 dark:flex" />
-      <img src={logoLight} alt="logo" class="w-12 dark:hidden" />
+      <img src="/logos/logoRED.svg" alt="logo" class="hidden w-12 dark:flex" />
+      <img src="/logos/logoBLUE.svg" alt="logo" class="w-12 dark:hidden" />
     </div>
     <div>
       <h1 class="text-2xl font-bold">AlexHM</h1>
     </div>
   </a>
-  <div class="flex items-center">
+  <div class="flex items-center gap-3">
     <DarkModeToggle client:only="react" />
     <a
-      class="ml-2 inline-flex cursor-pointer items-center font-bold transition-transform duration-300 hover:scale-125 hover:ease-in-out"
+      class="inline-flex cursor-pointer items-center gap-1 font-semibold text-slate-700 transition-transform duration-300 hover:scale-110 hover:ease-in-out dark:text-slate-200"
       href="https://www.github.com/alexhmdev"
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub Profile"
     >
-      <img src={githubLight} alt="github" class="w-12 dark:hidden" />
-      <img src={github} alt="github" class="hidden w-12 dark:flex" />
-      <p class="hidden sm:flex">Github</p>
+      <img src="/icons/github-loop-light.svg" alt="github" class="w-8 dark:hidden" />
+      <img src="/icons/github-loop.svg" alt="github" class="hidden w-8 dark:flex" />
+      <p class="hidden sm:flex">GitHub</p>
+    </a>
+    <a
+      class="inline-flex cursor-pointer items-center gap-1 font-semibold text-[#0A66C2] transition-transform duration-300 hover:scale-110 hover:ease-in-out dark:text-[#70B5F9]"
+      href="https://www.linkedin.com/in/alejandro-herrera-merlo"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn Profile"
+    >
+      <IconBrandLinkedin size={28} />
+      <p class="hidden sm:flex">LinkedIn</p>
+    </a>
+    <a
+      class="hidden sm:inline-flex items-center gap-1 rounded-md bg-light-primary px-3 py-1 text-xs font-bold text-light shadow transition-transform duration-300 hover:scale-105 dark:bg-primary"
+      href="/Alejandro_Herrera_Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <IconFileText size={16} />
+      CV
     </a>
   </div>
 </nav>
